@@ -1,3 +1,3 @@
 # Project with react tests
 
-## Use jest + enzyme
+Use jest + enzyme
