@@ -15,6 +15,13 @@ class App extends Component {
     this.setState({ lifecycle: 'componentDidMount' });
   }
 
+  handleStringHello = str => {
+    if (str === 'hello') {
+      return true;
+    }
+    return false;
+  };
+
   render() {
     const { mainColor, on, input, lifecycle } = this.state;
 

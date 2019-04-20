@@ -64,6 +64,13 @@ describe('<App /> shallow rendering', () => {
     jest.spyOn(App.prototype, 'componentDidMount');
     expect(wrapper.find('.lifecycle').text()).toBe('componentDidMount');
   });
+
+  it('handleString function return correctly', () => {
+    const trueReturn = wrapper.instance().handleStringHello('hello');
+    expect(trueReturn).toBe(true);
+    const falseReturn = wrapper.instance().handleStringHello('');
+    expect(falseReturn).toBe(false);
+  });
 });
 
 describe('<App /> mount rendering', () => {
