@@ -7,11 +7,16 @@ class App extends Component {
   state = {
     mainColor: 'blue',
     on: false,
-    input: ''
+    input: '',
+    lifecycle: ''
   };
 
+  componentDidMount() {
+    this.setState({ lifecycle: 'componentDidMount' });
+  }
+
   render() {
-    const { mainColor, on, input } = this.state;
+    const { mainColor, on, input, lifecycle } = this.state;
 
     return (
       <div className="App">
@@ -33,6 +38,7 @@ class App extends Component {
         <input onChange={e => this.setState({ input: e.currentTarget.value })} type="text" />
         <span className="button-state">{on ? 'YES' : 'NO'}</span>
         <button onClick={() => this.setState({ on: true })} />
+        <span className="lifecycle">{lifecycle}</span>
       </div>
     );
   }

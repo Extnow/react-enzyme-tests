@@ -59,6 +59,11 @@ describe('<App /> shallow rendering', () => {
     input.simulate('change', { currentTarget: { value: 'New title' } });
     expect(wrapper.find('h1').text()).toBe('New title');
   });
+
+  it('calls componentDidMount', () => {
+    jest.spyOn(App.prototype, 'componentDidMount');
+    expect(wrapper.find('.lifecycle').text()).toBe('componentDidMount');
+  });
 });
 
 describe('<App /> mount rendering', () => {
