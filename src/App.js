@@ -3,10 +3,14 @@ import styled from 'styled-components';
 
 export const Header = styled.div``;
 
-const Title = ({ text }) => <>{text}</>;
-
 class App extends Component {
+  state = {
+    mainColor: 'blue',
+  };
+
   render() {
+    const { mainColor } = this.state;
+
     return (
       <div className="App">
         <Header className="App-header">
@@ -23,7 +27,7 @@ class App extends Component {
             Learn React
           </a>
         </Header>
-        <Title text="hello" />
+        <h1 className={mainColor}>Hello</h1>
       </div>
     );
   }
