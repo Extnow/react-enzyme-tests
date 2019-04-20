@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import { Link } from './Link';
-import { Checkbox } from './Checkbox';
+import { Link } from '../Link';
+import { Checkbox } from '../Checkbox';
 
 export const Header = styled.div``;
 
@@ -45,7 +45,12 @@ class App extends Component {
           </a>
         </Header>
         <h1 className={mainColor}>{input}</h1>
-        <input onChange={e => this.setState({ input: e.currentTarget.value })} type="text" />
+        <input
+          className="input-text"
+          onChange={e => this.setState({ input: e.currentTarget.value })}
+          type="text"
+          value={input}
+        />
         <span className="button-state">{on ? 'YES' : 'NO'}</span>
         <button onClick={() => this.setState({ on: true })}>Клик</button>
         <div className="lifecycle">{lifecycle}</div>

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from './Link';
+import { Link } from '.';
 
-import { shallow } from './enzyme.config';
+import { shallow } from '../enzyme.config';
 
 describe('<Link />', () => {
   it('Link component accepts address prop', () => {
     const wrapper = shallow(<Link address="www.google.com" />);
-    // instance only for calss Components
+    // instance only for class Components
     expect(wrapper.instance().props.address).toBe('www.google.com');
   });
 

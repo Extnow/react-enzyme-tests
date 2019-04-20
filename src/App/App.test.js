@@ -1,10 +1,10 @@
 import React from 'react';
-import App from './App';
+import App from '.';
 
-import { shallow, mount } from './enzyme.config';
+import { shallow, mount } from '../enzyme.config';
 
 // testing with styled-components
-import { Header } from './App';
+import { Header } from '.';
 
 /*
  * shallow - отрисовывает только сам компонент без дочерних
@@ -50,13 +50,6 @@ describe('<App /> shallow rendering', () => {
     expect(wrapper.find('.button-state').text()).toBe('YES');
   });
 
-  it('on input change, title changes text', () => {
-    const input = wrapper.find('input');
-    expect(wrapper.find('h1').text()).toBe('');
-    input.simulate('change', { currentTarget: { value: 'New title' } });
-    expect(wrapper.find('h1').text()).toBe('New title');
-  });
-
   it('calls componentDidMount', () => {
     jest.spyOn(App.prototype, 'componentDidMount');
     expect(wrapper.find('.lifecycle').text()).toBe('componentDidMount');
@@ -67,6 +60,18 @@ describe('<App /> shallow rendering', () => {
     expect(trueReturn).toBe(true);
     const falseReturn = wrapper.instance().handleStringHello('');
     expect(falseReturn).toBe(false);
+  });
+
+  it('Получать уведомления на электронную почту чекнуто', () => {
+    const input = wrapper.find('Checkbox');
+    expect(input.props().checked).toBe(true);
+  });
+
+  it('Можно ввести значение в инпут, изменение инпута скажется на заголовке h1', () => {
+    const input = wrapper.find('input');
+    expect(wrapper.find('h1').text()).toBe('');
+    input.simulate('change', { currentTarget: { value: 'New title' } });
+    expect(wrapper.find('h1').text()).toBe('New title');
   });
 });
 
