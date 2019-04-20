@@ -1,8 +1,7 @@
 import React from 'react';
 import App from './App';
 
-import { configure, shallow, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount } from './enzyme.config';
 
 // testing with styled-components
 import { Header } from './App';
@@ -12,8 +11,6 @@ import { Header } from './App';
  * mount - тест mount/unmount лайфсайкл методов
  * configure({ adapter: new Adapter() }); - дефолтная конфигурация enzyme
  */
-
-configure({ adapter: new Adapter() });
 
 describe('<App /> shallow rendering', () => {
   const wrapper = shallow(<App />);

@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link } from './Link';
 
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
+import { shallow } from './enzyme.config';
 
 describe('<Link />', () => {
   it('Link component accepts address prop', () => {

@@ -1,11 +1,8 @@
 import React from 'react';
+
 import App from './App';
 import { Checkbox } from './Checkbox';
-
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
+import { shallow } from './enzyme.config';
 
 describe('<Checkbox />', () => {
   it('Получать уведомления на электронную почту чекнуто (относительно App)', () => {
