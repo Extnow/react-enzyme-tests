@@ -45,6 +45,20 @@ describe('<App /> shallow rendering', () => {
     expect(wrapper.find('.blue').length).toBe(0);
     expect(wrapper.find('.red').length).toBe(1);
   });
+
+  it('on button click changes p text', () => {
+    const button = wrapper.find('button');
+    expect(wrapper.find('.button-state').text()).toBe('NO');
+    button.simulate('click');
+    expect(wrapper.find('.button-state').text()).toBe('YES');
+  });
+
+  it('on input change, title changes text', () => {
+    const input = wrapper.find('input');
+    expect(wrapper.find('h1').text()).toBe('');
+    input.simulate('change', { currentTarget: { value: 'New title' } });
+    expect(wrapper.find('h1').text()).toBe('New title');
+  });
 });
 
 describe('<App /> mount rendering', () => {

@@ -6,10 +6,12 @@ export const Header = styled.div``;
 class App extends Component {
   state = {
     mainColor: 'blue',
+    on: false,
+    input: ''
   };
 
   render() {
-    const { mainColor } = this.state;
+    const { mainColor, on, input } = this.state;
 
     return (
       <div className="App">
@@ -27,7 +29,10 @@ class App extends Component {
             Learn React
           </a>
         </Header>
-        <h1 className={mainColor}>Hello</h1>
+        <h1 className={mainColor}>{input}</h1>
+        <input onChange={e => this.setState({ input: e.currentTarget.value })} type="text" />
+        <span className="button-state">{on ? 'YES' : 'NO'}</span>
+        <button onClick={() => this.setState({ on: true })} />
       </div>
     );
   }
