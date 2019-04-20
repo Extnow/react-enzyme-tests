@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import { Link } from './Link';
+import { Checkbox } from './Checkbox';
+
 export const Header = styled.div``;
 
 class App extends Component {
@@ -44,8 +47,10 @@ class App extends Component {
         <h1 className={mainColor}>{input}</h1>
         <input onChange={e => this.setState({ input: e.currentTarget.value })} type="text" />
         <span className="button-state">{on ? 'YES' : 'NO'}</span>
-        <button onClick={() => this.setState({ on: true })} />
-        <span className="lifecycle">{lifecycle}</span>
+        <button onClick={() => this.setState({ on: true })}>Клик</button>
+        <div className="lifecycle">{lifecycle}</div>
+        <Link address="https://github.com/Extnow" hide={false} />
+        <Checkbox data-testid="checked" checked={true} />
       </div>
     );
   }
