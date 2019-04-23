@@ -1,6 +1,6 @@
 # Project with react tests
 
-Run tests without CRA you need:
+### Run tests without CRA you need:
 
 - jest
 - babel-jest
